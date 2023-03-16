@@ -1,12 +1,17 @@
 import './ExpenseItem.css';
 
-function ExpenseItem() {
+function ExpenseItem(props) {
+  // in the default JS Date class, month starts from 0
+  // for March, we input '2'
+  // const expenseDate = new Date(2023, 2, 5);
+  const option = {month: 'short', day: '2-digit', year: 'numeric'}
+  const formattedDate = props.date.toLocaleString('en-US', option)
   return (
     <div className='expense-item'>
-      <div>Mar 2, 2023</div>
+      <div>{formattedDate}</div>
       <div className='expense-item__description'>
-        <h2>Car Insurance</h2>
-        <div className='expense-item__price'>$150</div>
+        <h2>{props.title}</h2>
+        <div className='expense-item__price'>${props.amount}</div>
       </div>
     </div>
   );
