@@ -1,8 +1,10 @@
 // import logo from './logo.svg';
 import "./App.css";
 // import ExpenseItem from "./components/ExpenseItem";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 
+// This can also be written as arrow function
+// const App = (props) => {}
 function App() {
   const expenses = [
     { title: "Car Insurance", amount: 150, date: new Date(2023, 2, 5) },
