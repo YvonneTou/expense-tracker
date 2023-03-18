@@ -2,7 +2,7 @@
 import "./App.css";
 // import ExpenseItem from "./components/ExpenseItem";
 import Expenses from "./components/Expenses/Expenses";
-
+import NewExpense from "./components/NewExpense/NewExpense";
 // This can also be written as arrow function
 // const App = (props) => {}
 function App() {
@@ -16,6 +16,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h2>Let's organize monthly expenses! 😙</h2>
+        <NewExpense />
         <Expenses items={expenses} />
       </header>
     </div>
