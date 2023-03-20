@@ -12,11 +12,17 @@ function App() {
     { title: "Dinner with team", amount: 50, date: new Date(2023, 2, 10) },
     { title: "Cosmetic eyeliner", amount: 32, date: new Date(2023, 2, 13) },
   ];
+
+  const addExpenseHandler = (expense) => {
+    console.log('In App.js')
+    console.log(expense);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <h2>Let's organize monthly expenses! 😙</h2>
-        <NewExpense />
+        <NewExpense onAddExpense={addExpenseHandler} />
         <Expenses items={expenses} />
       </header>
     </div>
