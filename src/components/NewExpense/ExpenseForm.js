@@ -3,10 +3,33 @@ import './ExpenseForm.css'
 
 function ExpenseForm() {
   const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredDate, setEnteredDate] = useState('');
+  // Alternative approach of using only 1 useState
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: '',
+  //   enteredAmount: '',
+  //   enteredDate: ''
+  // });
+
 
   const titleChangeHandler = (event) => {
+    // console.log(event.target.value);
     setEnteredTitle(event.target.value);
+    // setUserInput((prevState) => {
+    //   return { ...prevState, enteredTitle: event.target.value };
+    // });
   };
+
+  const amountChangeHandler = (event) => {
+    // console.log(event.target.value);
+    setEnteredAmount(event.target.value);
+  };
+
+  const dateChangeHandler = (event) => {
+    // console.log(event.target.value);
+    setEnteredDate(event.target.value);
+  }
 
   return (
     <form>
@@ -18,11 +41,11 @@ function ExpenseForm() {
 
         <div className="form-inline-input">
           <div className="new-expense__control">
-            <input type="number" min="0.00" step="0.01" placeholder="Amount $" />
+            <input type="number" min="0.00" step="0.01" placeholder="Amount $" onChange={amountChangeHandler} />
           </div>
 
           <div className="new-expense__control input-date">
-            <input type="date" min="2021-01-01" max="2025-12-31" />
+            <input type="date" min="2021-01-01" max="2025-12-31" onChange={dateChangeHandler} />
           </div>
         </div>
       </div>
