@@ -1,11 +1,18 @@
+import React, { useState } from 'react';
 import './Expenses.css'
 import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from './ExpenseFilter';
 
 function Expenses(props) {
+  const [filteredYear, setFilteredYear] = useState('2023');
+
+  const filterChangeHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
+    }
+
   return (
     <div className='expenses-container'>
-      <ExpenseFilter />
+      <ExpenseFilter onFilterChange={filterChangeHandler} selectedDefault={filteredYear} />
       <div className='expenses'>
         <ExpenseItem
           title={props.items[0].title}
