@@ -1,9 +1,10 @@
 import './Expenses.css'
 import ExpenseItem from "./ExpenseItem";
+import ExpenseFilter from './ExpenseFilter';
 
 function Expenses(props) {
   return (
-    <div>
+    <div className='expenses-container'>
       <ExpenseFilter />
       <div className='expenses'>
         <ExpenseItem

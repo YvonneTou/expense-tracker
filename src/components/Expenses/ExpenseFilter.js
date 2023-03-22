@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ExpenseFilterDropdown from './expense-filter-dropdown';
+import ExpenseFilterDropdown from './ExpenseFilterDropdown';
 import './ExpenseFilter.css'
 
 function expenseFilter() {

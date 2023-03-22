@@ -1,0 +1,13 @@
+.filter-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-title p {
+  color: pink;
+  padding: 0px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 0;
+}
