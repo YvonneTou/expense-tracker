@@ -6,10 +6,12 @@ import NewExpense from "./components/NewExpense/NewExpense";
 // This can also be written as arrow function
 // const App = (props) => {}
 const INITIAL_EXPENSES = [
-  { title: "Car Insurance", amount: 150, date: new Date(2023, 2, 15) },
-  { title: "Grocery Shopping", amount: 45, date: new Date(2023, 2, 6) },
-  { title: "Dinner with team", amount: 50, date: new Date(2023, 1, 10) },
-  { title: "Pet turtle", amount: 32, date: new Date(2023, 0, 13) },
+  { title: "Baby car seat", amount: 150, date: new Date(2023, 2, 15), id: '101' },
+  { title: "Apple watch", amount: 245, date: new Date(2023, 1, 6), id: '102' },
+  { title: "Basketball shoes", amount: 265, date: new Date(2022, 4, 18), id: '103' },
+  { title: "Classic suit", amount: 380, date: new Date(2022, 1, 10), id: '104' },
+  { title: "Golf club set", amount: 550, date: new Date(2021, 8, 26), id: '105' },
+  { title: "Pet turtle", amount: 32, date: new Date(2021, 0, 13), id: '106' },
 ];
 
 function App() {
