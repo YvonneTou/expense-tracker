@@ -21,7 +21,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h2>Let's organize monthly expenses! 😙</h2>
+        <h2>Let's organize <br />
+        monthly shopping expenses! 😙</h2>
         <NewExpense onAddExpense={addExpenseHandler} />
         <Expenses items={expenses} />
       </header>
