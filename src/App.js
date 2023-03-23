@@ -1,21 +1,22 @@
-// import logo from './logo.svg';
+import React, { useState } from 'react';
+
 import "./App.css";
-// import ExpenseItem from "./components/ExpenseItem";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 // This can also be written as arrow function
 // const App = (props) => {}
+const INITIAL_EXPENSES = [
+  { title: "Car Insurance", amount: 150, date: new Date(2023, 2, 15) },
+  { title: "Grocery Shopping", amount: 45, date: new Date(2023, 2, 6) },
+  { title: "Dinner with team", amount: 50, date: new Date(2023, 1, 10) },
+  { title: "Pet turtle", amount: 32, date: new Date(2023, 0, 13) },
+];
+
 function App() {
-  const expenses = [
-    { title: "Car Insurance", amount: 150, date: new Date(2023, 2, 5) },
-    { title: "Grocery Shopping", amount: 45, date: new Date(2023, 2, 6) },
-    { title: "Dinner with team", amount: 50, date: new Date(2023, 2, 10) },
-    { title: "Cosmetic eyeliner", amount: 32, date: new Date(2023, 2, 13) },
-  ];
+  const [expenses, setExpenses] = useState(INITIAL_EXPENSES);
 
   const addExpenseHandler = (expense) => {
-    console.log('In App.js')
-    console.log(expense);
+    setExpenses(prevExpenses => [expense, ...prevExpenses]);
   }
 
   return (
