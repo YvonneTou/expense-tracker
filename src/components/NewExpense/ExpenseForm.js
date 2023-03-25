@@ -33,6 +33,16 @@ function ExpenseForm(props) {
     setEnteredDate(event.target.value);
   };
 
+  const formShowHandler = () => {
+    setFormDisplay("component-show");
+    setAddButtonDisplay("component-hide");
+  };
+
+  const formHideHandler = () => {
+    setFormDisplay("component-hide");
+    setAddButtonDisplay("component-show");
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -45,20 +55,11 @@ function ExpenseForm(props) {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
-  };
-
-  const formShowHandler = () => {
-    setFormDisplay("component-show");
-    setAddButtonDisplay("component-hide");
-  };
-
-  const formHideHandler = () => {
-    setFormDisplay("component-hide");
-    setAddButtonDisplay("component-show");
+    formHideHandler();
   };
 
   return (
-    <div>
+    <div className='new-expense card'>
       <button onClick={formShowHandler} className={addButtonDisplay}>Click here to add a new expense</button>
 
       <form onSubmit={submitHandler} className={formDisplay}>
@@ -99,7 +100,7 @@ function ExpenseForm(props) {
         </div>
 
         <div className="new-expense__actions">
-          <button onClick={formHideHandler} className="cancel-button">Cancel</button>
+          <button type="button" onClick={formHideHandler} className="cancel-button">Cancel</button>
           <button type="submit">Add Expense</button>
         </div>
       </form>

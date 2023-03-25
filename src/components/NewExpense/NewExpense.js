@@ -12,9 +12,7 @@ function NewExpense(props) {
   }
 
   return (
-    <div className='new-expense card'>
       <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
-    </div>
   );
 }
 
