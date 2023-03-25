@@ -5,6 +5,9 @@ function ExpenseForm(props) {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+  const [formDisplay, setFormDisplay] = useState("component-hide");
+  const [addButtonDisplay, setAddButtonDisplay] = useState("component-show");
+
   // Alternative approach of using only 1 useState
   // const [userInput, setUserInput] = useState({
   //   enteredTitle: '',
@@ -44,48 +47,63 @@ function ExpenseForm(props) {
     setEnteredDate("");
   };
 
-  return (
-    <form onSubmit={submitHandler}>
-      <p className="form-title">Add an expense item</p>
-      <div className="new-expense__controls">
-        <div className="new-expense__control">
-          <input
-            type="text"
-            value={enteredTitle}
-            className="expense-form-input__title"
-            placeholder="Expense item"
-            onChange={titleChangeHandler}
-          />
-        </div>
+  const formShowHandler = () => {
+    setFormDisplay("component-show");
+    setAddButtonDisplay("component-hide");
+  };
 
-        <div className="form-inline-input">
+  const formHideHandler = () => {
+    setFormDisplay("component-hide");
+    setAddButtonDisplay("component-show");
+  };
+
+  return (
+    <div>
+      <button onClick={formShowHandler} className={addButtonDisplay}>Click here to add a new expense</button>
+
+      <form onSubmit={submitHandler} className={formDisplay}>
+        <p className="form-title">Add an expense item</p>
+        <div className="new-expense__controls">
           <div className="new-expense__control">
             <input
-              type="number"
-              value={enteredAmount}
-              min="0.00"
-              step="0.01"
-              placeholder="Amount $"
-              onChange={amountChangeHandler}
+              type="text"
+              value={enteredTitle}
+              className="expense-form-input__title"
+              placeholder="Expense item"
+              onChange={titleChangeHandler}
             />
           </div>
 
-          <div className="new-expense__control input-date">
-            <input
-              type="date"
-              value={enteredDate}
-              min="2021-01-01"
-              max="2025-12-31"
-              onChange={dateChangeHandler}
-            />
+          <div className="form-inline-input">
+            <div className="new-expense__control">
+              <input
+                type="number"
+                value={enteredAmount}
+                min="0.00"
+                step="0.01"
+                placeholder="Amount $"
+                onChange={amountChangeHandler}
+              />
+            </div>
+
+            <div className="new-expense__control input-date">
+              <input
+                type="date"
+                value={enteredDate}
+                min="2021-01-01"
+                max="2025-12-31"
+                onChange={dateChangeHandler}
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="new-expense__actions">
-        <button type="submit">Add Expense</button>
-      </div>
-    </form>
+        <div className="new-expense__actions">
+          <button onClick={formHideHandler} className="cancel-button">Cancel</button>
+          <button type="submit">Add Expense</button>
+        </div>
+      </form>
+    </div>
   );
 }
 

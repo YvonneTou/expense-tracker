@@ -14,13 +14,6 @@
   text-align: left;
 }
 
-.new-expense__control label {
-  margin-bottom: 0.5rem;
-  display: block;
-  color: indianred;
-  font-size: 1rem;
-}
-
 .new-expense__control input {
   padding: 0.5rem;
   border-radius: 4px;
@@ -30,24 +23,40 @@
 }
 
 .new-expense__actions {
-  width: 100%;
+  display: flex;
+  /* width: 100%; */
+  gap: 2rem;
+}
+
+.new-expense__actions .cancel-button {
+  background-color: gray;
+  width: 30%;
 }
 
 .form-inline-input {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
-  width: 100%;
-  gap: 1rem;
+  /* width: 100%; */
+  /* gap: 1rem; */
 }
 
 .input-date input {
-  /* flex-grow: 1; */
+  box-sizing: border-box;
   width: 15rem;
 }
 
 .expense-form-input__title {
   display: block;
-  width: 98%;
+  width:100%;
   margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.component-show {
+  display: block;
+}
+
+.component-hide {
+  display: none;
 }
