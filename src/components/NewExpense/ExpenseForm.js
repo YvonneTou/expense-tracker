@@ -65,7 +65,7 @@ function ExpenseForm(props) {
       <form onSubmit={submitHandler} className={formDisplay}>
         <p className="form-title">Add an expense item</p>
         <div className="new-expense__controls">
-          <div className="new-expense__control">
+          <div className="new-expense__control input-title">
             <input
               type="text"
               value={enteredTitle}
@@ -75,33 +75,33 @@ function ExpenseForm(props) {
             />
           </div>
 
-          <div className="form-inline-input">
-            <div className="new-expense__control">
-              <input
-                type="number"
-                value={enteredAmount}
-                min="0.00"
-                step="0.01"
-                placeholder="Amount $"
-                onChange={amountChangeHandler}
-              />
-            </div>
+          <div className="new-expense__control input-amount">
+            <input
+              type="number"
+              value={enteredAmount}
+              className="expense-form-input__amount"
+              min="0.00"
+              step="0.01"
+              placeholder="Amount $"
+              onChange={amountChangeHandler}
+            />
+          </div>
 
-            <div className="new-expense__control input-date">
-              <input
-                type="date"
-                value={enteredDate}
-                min="2021-01-01"
-                max="2025-12-31"
-                onChange={dateChangeHandler}
-              />
-            </div>
+          <div className="new-expense__control input-date">
+            <input
+              type="date"
+              value={enteredDate}
+              className="expense-form-input__date"
+              min="2021-01-01"
+              max="2025-12-31"
+              onChange={dateChangeHandler}
+            />
           </div>
         </div>
 
         <div className="new-expense__actions">
-          <button type="button" onClick={formHideHandler} className="cancel-button">Cancel</button>
           <button type="submit">Add Expense</button>
+          <button type="button" onClick={formHideHandler} className="cancel-button">Cancel</button>
         </div>
       </form>
     </div>
