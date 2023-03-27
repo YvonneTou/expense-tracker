@@ -20,11 +20,12 @@
 .chart-bar__fill {
   background-color: pink;
   width: 100%;
-  transition: all 0.8s ease-in-out;
+  transition: all 1s ease-out;
 }
 
 .chart-bar__label {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   text-align: center;
-  color: indianred;
+  color: white;
+  margin-top: 0.5rem;
 }

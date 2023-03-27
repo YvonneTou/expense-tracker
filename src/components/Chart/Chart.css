@@ -1,5 +1,5 @@
 .chart {
-  display: block;
+  /* display: block; */
   padding: 1rem;
   border-radius: 4px;
   /* background-color: white; */
@@ -7,4 +7,12 @@
   display: flex;
   justify-content: space-between;
   height: 10rem;
+}
+
+.chart-show {
+  display: flex;
+}
+
+.chart-hide {
+  display: none !important;
 }

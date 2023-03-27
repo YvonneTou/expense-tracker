@@ -5,12 +5,12 @@
 }
 
 .expense-date__year {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 800;
 }
 
 .expense-date__month {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
 }
 
 .expense-date__day {

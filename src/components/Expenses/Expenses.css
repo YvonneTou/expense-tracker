@@ -11,3 +11,11 @@
   align-items: center;;
   width: 100%;
 }
+
+.chart-show {
+  display: block;
+}
+
+.chart-hide {
+  display: none;
+}
