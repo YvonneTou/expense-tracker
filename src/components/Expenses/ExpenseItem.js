@@ -9,10 +9,10 @@ function ExpenseItem(props) {
   // const expenseDate = new Date(2023, 2, 5);
   const [title, setTitle] = useState(props.title);
 
-  const clickHandler = () => {
-    setTitle('Updated!');
-    console.log(title);
-  }
+  // const clickHandler = () => {
+  //   setTitle('Updated!');
+  //   console.log(title);
+  // }
 
   return (
     <Card className='expense-item'>
